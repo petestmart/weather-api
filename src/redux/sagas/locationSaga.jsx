@@ -3,6 +3,7 @@ import axios from 'axios';
 
 // Send location to location.router
 function* getLocation(action) {
+
     try {
         const locationResponse = yield axios.get(`/api/location?tag=${action.payload}`)
         console.log('getLocation Response:', locationResponse.data);

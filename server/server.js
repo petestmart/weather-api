@@ -1,29 +1,25 @@
-
-const express = require('express');
-require('dotenv').config();
-
+const express = require("express");
 const app = express();
-const bodyParser = require('body-parser');
-const sessionMiddleware = require('./modules/session-middleware');
+const bodyParser = require("body-parser");
 
-const passport = require('./strategies/user.strategy');
+
+/** ---------- MIDDLEWARE ---------- **/
+app.use(bodyParser.json()); // needed for axios requests
 
 // Route includes
-const userRouter = require('./routes/user.router');
+const locationRouter = require('./routes/location.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('build'));
 
-// Passport Session Configuration //
-app.use(sessionMiddleware);
-
-// start up passport sessions
-app.use(passport.initialize());
-app.use(passport.session());
+// // start up passport sessions
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 /* Routes */
-app.use('/api/user', userRouter);
+app.use('/api/location', locationRouter)
+
 
 // Serve static files
 app.use(express.static('build'));
