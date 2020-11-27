@@ -1,3 +1,4 @@
+// ========== REACT ========== //
 import React, { Component } from "react";
 import {
   HashRouter as Router,
@@ -5,18 +6,22 @@ import {
   Redirect,
   Switch,
 } from "react-router-dom";
-
 import { connect } from "react-redux";
 
+// ========== COMPONENTS ========== //
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
+import UserInput from "../UserInput/UserInput";
+import WeatherDisplay from "../WeatherDisplay/WeatherDisplay";
 
+// ========== MATERIAL UI ========== //
 import TextField from "@material-ui/core/TextField";
+
 
 import AboutPage from "../AboutPage/AboutPage";
 import UserPage from "../UserPage/UserPage";
 import InfoPage from "../InfoPage/InfoPage";
-import UserInput from "../UserInput/UserInput";
+
 
 import "./App.css";
 
@@ -31,6 +36,7 @@ class App extends Component {
         <Router>
           <Nav />
           <UserInput />
+          <WeatherDisplay />
           <Footer />
         </Router>
       </div>
