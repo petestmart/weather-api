@@ -8,6 +8,7 @@ import swal from 'sweetalert';
 
 // ========== PAGE ELEMENTS ========== //
 import Button from "@material-ui/core/Button";
+import CardContent from '@material-ui/core/CardContent';
 import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 
@@ -30,7 +31,7 @@ class UserInput extends Component {
 
         // Alert For Empty Input Field
         if (this.state.location === '') {
-            swal("Howdy, Friend", "You'll need to enter a location before we can name your weather info.")
+            swal("Howdy, Friend", "You'll need to enter a location before we can provide your weather info.")
         }
 
         else {
@@ -45,29 +46,31 @@ class UserInput extends Component {
     render() {
         return (
             <div>
-                <Paper>
-                    <h2>Enter Location</h2>
-                    <span className="location-input">
-                        <form>
-                            <TextField
-                                onChange={this.handleChange}
-                                id="outlined-basic"
-                                variant="outlined"
-                                className="input"
-                                size="small"
-                            />
-                            <Button
-                                onClick={this.handleClick}
-                                size="small"
-                                className="submitButton"
-                                variant="contained"
-                                color="primary"
-                                type="submit"
-                            >
-                                Submit
-                        </Button>
-                        </form>
-                    </span>
+                <Paper className="location-input">
+                    <CardContent>
+                        <h2>Enter Location</h2>
+                        <span >
+                            <form>
+                                <TextField
+                                    onChange={this.handleChange}
+                                    id="outlined-basic"
+                                    variant="outlined"
+                                    className="input"
+                                    size="small"
+                                />
+                                <Button
+                                    onClick={this.handleClick}
+                                    size="small"
+                                    className="submitButton"
+                                    variant="contained"
+                                    color="primary"
+                                    type="submit"
+                                >
+                                    Submit
+                                </Button>
+                            </form>
+                        </span>
+                    </CardContent>
                 </Paper>
             </div>
         ) // end return

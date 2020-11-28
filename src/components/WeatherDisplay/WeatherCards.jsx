@@ -18,11 +18,11 @@ import './WeatherDisplay.css';
 
 const styles = theme => ({
     root: {
-        flexGrow: 1,
+        flexGrow: 2,
     },
     card: {
-        height: 400,
-        width: 400,
+        height: 200,
+        width: 300,
     }
     // control: {
     //     padding: theme.spacing(2),
@@ -49,10 +49,17 @@ class WeatherCards extends Component {
                         <Card
                             className={classes.card}
                         >
-                            {this.props.displayHighTemperatureF}
-                            {this.props.displayLowTemperatureF}
-                            {this.props.displayConditions}
-                            {icon}
+                            <CardContent>
+                                <Typography>
+                                    High Temp {this.props.displayHighTemperatureF}
+                                </Typography>
+                                <Typography>
+                                    {this.props.displayConditions}{icon}
+                                </Typography>
+                                <Typography>
+                                    Low Temp {this.props.displayLowTemperatureF}
+                                </Typography>
+                            </CardContent>
                         </Card>
                     </Box>
                 </div>

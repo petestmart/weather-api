@@ -8,28 +8,11 @@
 
 .nav {
   overflow: hidden;
-  background-color: #6db1ff;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgb(119, 114, 219) 0%, rgba(14,222,255,1) 82%, rgb(240, 241, 241) 100%);
 }
 
-.nav-link {
-  float: left;
-  color: #f2f2f2;
-  background-color: #00acb0;
-  text-align: center;
-  padding: 24px 10px;
-  text-decoration: none;
-  font-size: 15px;
 
-  /* these last two make the logout button in
-  the nav bar look like another link */
-  border:none;
-  cursor: pointer;
-  outline:0;
-}
-
-.nav-link:hover {
-  background-color: #82deee;
-}
 
 .nav-right {
   float: right;

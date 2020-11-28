@@ -85,7 +85,13 @@ class WeatherDisplay extends Component {
 
         return (
             <div>
-                <Grid container className={classes.root} spacing={1}>
+                <Grid 
+                    container
+                    // direction="column"
+                    // item xs s={12}
+                    className={classes.root} 
+                    spacing={1}
+                >
                     <Grid item xs={12}>
                         {/* Current Weather */}
                         <CurrentWeather
@@ -98,7 +104,7 @@ class WeatherDisplay extends Component {
                         />
 
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item xs={12} sm={4}>
                         {/* Today's Low and High */}
                         <WeatherCards
                             displayHighTemperatureF={todayTemperatureMaxF}
@@ -107,7 +113,7 @@ class WeatherDisplay extends Component {
                             displayWeatherIcon={todayWeatherIcon}
                         />
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item xs={12} sm={4}>
                         {/* Tomorrow's Weather */}
                         <WeatherCards
                             displayHighTemperatureF={tomorrowTemperatureMaxF}
@@ -116,7 +122,7 @@ class WeatherDisplay extends Component {
                             displayWeatherIcon={tomorrowWeatherIcon}
                         />
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item xs={12} sm={4}>
                         {/* Two Day Weather */}
                         <WeatherCards
                             displayHighTemperatureF={twoDayTemperatureMaxF}

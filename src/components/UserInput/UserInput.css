@@ -1,10 +1,10 @@
 form {
     display: flex;
     margin-left: 5%;
-    padding: 10px
+    padding: 7px
 }
 
-Paper {
-    display: flex;
+.location-input {
+    /* display: flex; */
     margin-left: 5%;
 }

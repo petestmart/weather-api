@@ -1,4 +1,10 @@
+.current-weather-display {
+    margin-left: 1.65%;
+    float: left;
+}
+
 .weatherDisplayCard {
     margin-left: 5%;
     float: left;
 }
+

@@ -43,7 +43,7 @@ class App extends Component {
               <UserInput />
             </Grid>
             <Grid item xs={4}>
-              <CurrentWeather />
+              {/* <CurrentWeather /> */}
             </Grid>
           </Grid>
         </Grid>
