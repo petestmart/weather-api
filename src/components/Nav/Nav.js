@@ -15,7 +15,7 @@ import "./Nav.css";
 const Nav = (props) => (
   <div className="nav">
     <Grid container spacing={1}>
-      <Grid item xs={6}>
+      <Grid item sm={6} xs={12}>
         <Typography>
           <h1 className="nav-title">
             <img src={dayIcon} alt="spinning sun icon" />
@@ -23,7 +23,7 @@ const Nav = (props) => (
           </h1>
         </Typography>
       </Grid>
-      <Grid item xs={6}>
+      <Grid item sm={6} xs={12}>
         <div className="location-input-form">
           <UserInput />
         </div>

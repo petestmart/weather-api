@@ -19,7 +19,7 @@ import "./App.css";
 
 const styles = (theme) => ({
   root: {
-    flexGrow: 0,
+    flexGrow: 2,
   },
   control: {
     padding: theme.spacing(2),
@@ -37,19 +37,8 @@ class App extends Component {
     return (
       <div>
         <Nav />
-        <Grid container className={classes.root} spacing={1}>
-          <Grid item xs={12}>
-            <Grid item xs={4}>
-              {/* <UserInput /> */}
-            </Grid>
-            <Grid item xs={4}>
-              {/* <CurrentWeather /> */}
-            </Grid>
-          </Grid>
-        </Grid>
         <WeatherDisplay />
         <Footer />
-        
       </div>
     );
   }

@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 
 // ========== MATERIAL UI ========== //
 import Box from '@material-ui/core/Box';
-import Paper from '@material-ui/core/Paper';
+import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import { withStyles } from '@material-ui/core/styles';
@@ -16,24 +16,37 @@ import Typography from '@material-ui/core/Typography';
 // ========== STYLES ========== //
 import './WeatherDisplay.css';
 
+const styles = theme => ({
+    root: {
+        flexGrow: 2,
+    },
+    card: {
+        height: 200,
+        width: 300,
+    }
+});
 
 class CurrentWeather extends Component {
 
     render() {
+        const { classes } = this.props;
         if (this.props.reduxState.weatherDataReducer.length === 0) {
             return null;
         }
         else {
             return (
                 <div>
-                    <Box className="current-weather-display" width="25%" minHeight="25%">
-                        <Paper>
+                    <Box className="current-weather-display">
+                        <Card
+                            className={classes.card}
+                        >
                             <CardContent>
                                 <Typography>
                                     Current Temp {this.props.displayCurrentTemperatureF}
                                 </Typography>
+                                <img src={this.props.displayCurrentWeatherIcon} alt={this.props.displayCurrentCondition} />
                                 <Typography>
-                                    {this.props.displayCurrentCondition} <img src={this.props.displayCurrentWeatherIcon} alt={this.props.displayCurrentCondition} />
+                                    {this.props.displayCurrentCondition} 
                                 </Typography>
                                 <Typography>
                                     {this.props.displayLocationCity} - {this.props.displayLocationRegion}
@@ -42,7 +55,7 @@ class CurrentWeather extends Component {
                                     Updated {this.props.displayLastUpdated}
                                 </Typography>
                             </CardContent>
-                        </Paper>
+                        </Card>
                     </Box>
                 </div>
             )
@@ -57,4 +70,4 @@ const mapStateToProps = (reduxState) => {
     }
 }
 
-export default connect(mapStateToProps)(CurrentWeather);
+export default withStyles(styles)(connect(mapStateToProps)(CurrentWeather));

@@ -24,9 +24,6 @@ const styles = theme => ({
         height: 200,
         width: 300,
     }
-    // control: {
-    //     padding: theme.spacing(2),
-    // }
 });
 
 class WeatherCards extends Component {
@@ -45,7 +42,7 @@ class WeatherCards extends Component {
         else {
             return (
                 <div>
-                    <Box width="25%" minHeight="25%" className='weatherDisplayCard'>
+                    <Box className='weatherDisplayCard'>
                         <Card
                             className={classes.card}
                         >
@@ -56,8 +53,9 @@ class WeatherCards extends Component {
                                 <Typography>
                                     High Temp {this.props.displayHighTemperatureF}
                                 </Typography>
+                                {icon}
                                 <Typography>
-                                    {this.props.displayConditions}{icon}
+                                    {this.props.displayConditions}
                                 </Typography>
                                 <Typography>
                                     Low Temp {this.props.displayLowTemperatureF}

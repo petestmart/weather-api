@@ -11,6 +11,16 @@ import Button from "@material-ui/core/Button";
 import CardContent from '@material-ui/core/CardContent';
 import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = theme => ({
+    root: {
+        flexGrow: 0,
+    },
+    control: {
+        padding: theme.spacing(2),
+    }
+});
 
 class UserInput extends Component {
 
@@ -54,7 +64,7 @@ class UserInput extends Component {
                                 <TextField
                                     onChange={this.handleChange}
                                     id="filled-basic"
-                                    label="Search City or Zip Code"
+                                    label="Search City or Zip"
                                     variant="outlined"
                                     className="input"
                                     size="small"

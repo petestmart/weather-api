@@ -101,7 +101,7 @@ class WeatherDisplay extends Component {
                     className={classes.root} 
                     spacing={1}
                 >
-                    <Grid item xs={12}>
+                    <Grid item xs={12} sm={12}>
                         {/* Current Weather */}
                         <CurrentWeather
                             displayDate={todayDate}
