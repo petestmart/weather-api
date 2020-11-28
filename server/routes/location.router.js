@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
     console.log("You made it to the location router", req.query.tag)
     axios
       .get(
-        `http://api.weatherapi.com/v1/current.json?key=${process.env.WEATHER_API_KEY}&q=${req.query.tag}`)
+        `http://api.weatherapi.com/v1/forecast.json?key=${process.env.WEATHER_API_KEY}&q=${req.query.tag}&days=3`)
       .then((response) => {
         console.log("location router", response.data);
         res.send(response.data);
