@@ -66,7 +66,6 @@ class WeatherCards extends Component {
                 </div>
             )
         }
-        
     }
 }
 

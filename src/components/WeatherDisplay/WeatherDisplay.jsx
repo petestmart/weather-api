@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 // ========== COMPONENTS ========== //
 import WeatherCards from './WeatherCards';
 import CurrentWeather from './CurrentWeather';
+// import DateGenerator from './DateGenerator';
 
 // ========== MATERIAL UI ========== //
 import Grid from '@material-ui/core/Grid';
@@ -25,6 +26,39 @@ const styles = theme => ({
 });
 
 class WeatherDisplay extends Component {
+
+    componentDidMount() {
+        this.getDate();
+    }
+
+    state = {
+        today: '',
+        tomorrow: '',
+        twoDay: '',
+    }
+
+    getDate = () => {
+        let today = new Date()
+        let dd = today.getDate()
+        let mm = today.getMonth() + 1 //January=0
+        let yyyy = today.getFullYear()
+        if (dd < 10) {
+            dd = '0' + dd
+        }
+
+        if (mm < 10) {
+            mm = '0' + mm
+        }
+
+        today = `${mm}-${dd}-${yyyy}`;
+        let tomorrow = `${mm}-${dd+1}-${yyyy}`;
+        let twoDay = `${mm}-${dd+2}-${yyyy}`;
+        this.setState({
+            today: today,
+            tomorrow: tomorrow,
+            twoDay: twoDay,
+        })
+    }
 
     render() {
         const { classes } = this.props;
@@ -54,6 +88,8 @@ class WeatherDisplay extends Component {
 
 
         if (this.props.reduxState.weatherDataReducer.length !== 0) {
+            
+
             let weatherDataReducer = this.props.reduxState.weatherDataReducer;
             let currentWeather = weatherDataReducer.current;
             let todayWeather = weatherDataReducer.forecast.forecastday[0].day;
@@ -61,9 +97,11 @@ class WeatherDisplay extends Component {
             let twoDayWeather = weatherDataReducer.forecast.forecastday[2].day;
 
             // Date
-            todayDate = weatherDataReducer.forecast.forecastday[0].date;
-            tomorrowDate = weatherDataReducer.forecast.forecastday[1].date;
-            twoDayDate = weatherDataReducer.forecast.forecastday[2].date;
+            // todayDate = weatherDataReducer.forecast.forecastday[0].date;
+            todayDate = this.state.today;
+            
+            tomorrowDate = this.state.tomorrow;
+            twoDayDate = this.state.twoDay;
 
             // Location
             locationCity = weatherDataReducer.location.name;
@@ -86,7 +124,8 @@ class WeatherDisplay extends Component {
             tomorrowWeatherIcon = tomorrowWeather.condition.icon;
             // Two Day
             twoDayTemperatureMaxF = twoDayWeather.maxtemp_f;
-            twoDayTemperatureLowF = twoDayWeather.mintemp_f
+            twoDayTemperatureLowF = twoDayWeather.mintemp_f;
+            twoDayCondition = twoDayWeather.condition.text;
             twoDayWeatherIcon = tomorrowWeather.condition.icon;
 
         }
@@ -94,14 +133,13 @@ class WeatherDisplay extends Component {
 
         return (
             <div>
+                {this.props.todayDate}
                 <Grid 
                     container
-                    // direction="column"
-                    // item xs s={12}
                     className={classes.root} 
                     spacing={1}
                 >
-                    <Grid item xs={12} sm={12}>
+                    <Grid item xs={12} md={12}>
                         {/* Current Weather */}
                         <CurrentWeather
                             displayDate={todayDate}
@@ -114,7 +152,7 @@ class WeatherDisplay extends Component {
                         />
 
                     </Grid>
-                    <Grid item xs={12} sm={4}>
+                    <Grid item sm={12} md={3}>
                         {/* Today's Low and High */}
                         <WeatherCards
                             displayDate={todayDate}
@@ -124,7 +162,7 @@ class WeatherDisplay extends Component {
                             displayWeatherIcon={todayWeatherIcon}
                         />
                     </Grid>
-                    <Grid item xs={12} sm={4}>
+                    <Grid item sm={12} sm={3}>
                         {/* Tomorrow's Weather */}
                         <WeatherCards
                             displayDate={tomorrowDate}
@@ -134,7 +172,7 @@ class WeatherDisplay extends Component {
                             displayWeatherIcon={tomorrowWeatherIcon}
                         />
                     </Grid>
-                    <Grid item xs={12} sm={4}>
+                    <Grid item sm={12} md={3}>
                         {/* Two Day Weather */}
                         <WeatherCards
                             displayDate={twoDayDate}
