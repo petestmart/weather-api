@@ -6,7 +6,6 @@ function* getLocation(action) {
 
     try {
         const locationResponse = yield axios.get(`/api/location?tag=${action.payload}`)
-        console.log('getLocation Response:', locationResponse.data);
         yield put({ type: 'SET_WEATHER_DATA', payload: locationResponse.data })
     } catch (error) {
         console.log('error in getLocation Saga', error);

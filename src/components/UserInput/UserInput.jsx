@@ -8,7 +8,7 @@ import swal from 'sweetalert';
 
 // ========== PAGE ELEMENTS ========== //
 import TextField from "@material-ui/core/TextField";
-import Button from '@material-ui/core/Button';
+import Button from "@material-ui/core/Button";
 
 class UserInput extends Component {
 
@@ -16,17 +16,8 @@ class UserInput extends Component {
         location: '',
     }
 
-    // ========== FUNCTIONS ========== //
-    // = Functions Are In Alphabetical Order = //
-
     // Changes State To What is Being Typed By The User Into The Input
     handleChange = (event) => {
-
-        console.log('Input location:', event.target.value)
-        // let modKeyword;
-        // let location;
-        // modKeyword = event.target.value
-        // keyword = modKeyword.replace(modKeyword.charAt(0), modKeyword.charAt(0).toUpperCase())
         this.setState({
             location: event.target.value,
         })
@@ -40,12 +31,11 @@ class UserInput extends Component {
         if (this.state.location === '') {
             swal("Howdy, Friend", "You'll need to enter a location before we can name your weather info.")
         }
-        // Sends User Input to newNamesSaga (Then Thesaurus API and also Starts Route To DB)
+       
         else {
             this.props.dispatch({
                 type: 'SEARCH_LOCATION',
                 payload: this.state.location,
-                // history: this.props.history
             })
         }
 
@@ -55,13 +45,13 @@ class UserInput extends Component {
         return (
             <div>
                 <h2>Enter Location</h2>
-                <span class="location-input">
+                <span className="location-input">
                     <form>
                         <TextField
                             onChange={this.handleChange}
                             id="outlined-basic"
                             variant="outlined"
-                            class="input"
+                            className="input"
                             size="small"
                         />
                         <Button

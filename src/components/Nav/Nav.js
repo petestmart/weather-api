@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import LogOutButton from '../LogOutButton/LogOutButton';
+// import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import dayIcon from '../icons/day.svg'; 
 
@@ -9,8 +9,9 @@ const Nav = (props) => (
   <div className="nav">
     {/* <Link to="/home"> */}
     <h1 className="nav-title">
-      <img src={dayIcon} />
-       SunSpotter <img src={dayIcon} />
+      <img src={dayIcon} alt="spinning sun icon" />
+      SunSpotter 
+      <img src={dayIcon} alt="spinning sun icon" />
     </h1>
   </div>
 );

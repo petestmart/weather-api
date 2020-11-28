@@ -7,7 +7,6 @@ const axios = require("axios");
 require("dotenv").config();
 
 router.get('/', (req, res) => {
-    console.log("You made it to the location router", req.query.tag)
     axios
       .get(
         `http://api.weatherapi.com/v1/forecast.json?key=${process.env.WEATHER_API_KEY}&q=${req.query.tag}&days=3`)
