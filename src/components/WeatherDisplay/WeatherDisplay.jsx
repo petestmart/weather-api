@@ -16,7 +16,7 @@ import './WeatherDisplay.css';
 
 const styles = theme => ({
     root: {
-        flexGrow: 1,
+        flexGrow: 0,
     },
     control: {
         padding: theme.spacing(2),
@@ -77,8 +77,7 @@ class WeatherDisplay extends Component {
             tomorrowWeatherIcon = tomorrowWeather.condition.icon;
             // Two Day
             twoDayTemperatureMaxF = twoDayWeather.maxtemp_f;
-            twoDayTemperatureLowF = twoDayWeather.mintemp_f;
-            twoDayCondition = twoDayWeather.condition.text;
+            twoDayTemperatureLowF = twoDayWeather.mintemp_f
             twoDayWeatherIcon = tomorrowWeather.condition.icon;
 
         }

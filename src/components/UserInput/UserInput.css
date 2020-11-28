@@ -1,4 +1,10 @@
 form {
     display: flex;
     margin-left: 5%;
+    padding: 10px
+}
+
+Paper {
+    display: flex;
+    margin-left: 5%;
 }

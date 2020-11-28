@@ -4,10 +4,10 @@
 // ========== REACT ========== //
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom'
 
 // ========== MATERIAL UI ========== //
 import Box from '@material-ui/core/Box';
+import Paper from '@material-ui/core/Paper';
 
 // ========== STYLES ========== //
 import './WeatherDisplay.css';
@@ -16,19 +16,26 @@ import './WeatherDisplay.css';
 class CurrentWeather extends Component {
 
     render() {
-
-        return (
-            <div>
-                <Box width="50%" minHeight="25%">
-                        {this.props.displayCurrentTemperatureF}
-                        {this.props.displayCurrentCondition}
-                        <img src={this.props.displayCurrentWeatherIcon} alt={this.props.displayCurrentCondition}/>
-                        {this.props.displayLocationCity}
-                        {this.props.displayLocationRegion}
-                        {this.props.displayLastUpdated}
-                </Box>
-            </div>
-        )
+        if (this.props.reduxState.weatherDataReducer.length === 0) {
+            return null;
+        }
+        else {
+            return (
+                <div>
+                    <Box width="50%" minHeight="25%">
+                        <Paper>
+                            {this.props.displayCurrentTemperatureF}
+                            {this.props.displayCurrentCondition}
+                            <img src={this.props.displayCurrentWeatherIcon} alt={this.props.displayCurrentCondition} />
+                            {this.props.displayLocationCity}
+                            {this.props.displayLocationRegion}
+                            {this.props.displayLastUpdated}
+                        </Paper>
+                    </Box>
+                </div>
+            )
+        }
+        
     }
 }
 
@@ -38,4 +45,4 @@ const mapStateToProps = (reduxState) => {
     }
 }
 
-export default withRouter(connect(mapStateToProps)(CurrentWeather));
+export default connect(mapStateToProps)(CurrentWeather);
