@@ -46,14 +46,15 @@ class UserInput extends Component {
     render() {
         return (
             <div>
-                <Paper className="location-input">
-                    <CardContent>
-                        <h2>Enter Location</h2>
+                {/* <Paper className="location-input"> */}
+                    {/* <CardContent> */}
+                        {/* <h2>Enter Location</h2> */}
                         <span >
                             <form>
                                 <TextField
                                     onChange={this.handleChange}
-                                    id="outlined-basic"
+                                    id="filled-basic"
+                                    label="Search City or Zip Code"
                                     variant="outlined"
                                     className="input"
                                     size="small"
@@ -70,8 +71,8 @@ class UserInput extends Component {
                                 </Button>
                             </form>
                         </span>
-                    </CardContent>
-                </Paper>
+                    {/* </CardContent> */}
+                {/* </Paper> */}
             </div>
         ) // end return
     } // end render

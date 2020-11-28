@@ -40,7 +40,7 @@ class App extends Component {
         <Grid container className={classes.root} spacing={1}>
           <Grid item xs={12}>
             <Grid item xs={4}>
-              <UserInput />
+              {/* <UserInput /> */}
             </Grid>
             <Grid item xs={4}>
               {/* <CurrentWeather /> */}

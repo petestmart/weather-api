@@ -1,5 +1,5 @@
 .nav-title {
-    font-size: 34px;
+    font-size: 150%;
     font-weight: 700;
     display: inline-block;
     color: #f2f2f2;
@@ -12,7 +12,9 @@
   background: linear-gradient(90deg, rgb(119, 114, 219) 0%, rgba(14,222,255,1) 82%, rgb(240, 241, 241) 100%);
 }
 
-
+.location-input-form {
+  padding-top: 40px;
+}
 
 .nav-right {
   float: right;

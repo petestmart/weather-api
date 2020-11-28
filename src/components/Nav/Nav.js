@@ -1,28 +1,37 @@
-import React from 'react';
+// ========== REACT ========== //
+import React from "react";
 // import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-// import LogOutButton from '../LogOutButton/LogOutButton';
-import './Nav.css';
-import dayIcon from '../icons/day.svg'; 
+import { connect } from "react-redux";
+
+// ========== COMPONENTS ========== //
+import UserInput from "../UserInput/UserInput";
+
+// ========== STYLES & MUI ========== //
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import dayIcon from "../icons/day.svg";
+import "./Nav.css";
 
 const Nav = (props) => (
   <div className="nav">
-    {/* <Link to="/home"> */}
-    <h1 className="nav-title">
-      <img src={dayIcon} alt="spinning sun icon" />
-      SunSpotter 
-      <img src={dayIcon} alt="spinning sun icon" />
-    </h1>
+    <Grid container spacing={1}>
+      <Grid item xs={6}>
+        <Typography>
+          <h1 className="nav-title">
+            <img src={dayIcon} alt="spinning sun icon" />
+            SunSpotter
+          </h1>
+        </Typography>
+      </Grid>
+      <Grid item xs={6}>
+        <div className="location-input-form">
+          <UserInput />
+        </div>
+      </Grid>
+    </Grid>
   </div>
 );
 
-// Instead of taking everything from state, we just want the user
-// object to determine if they are logged in
-// if they are logged in, we show them a few more links 
-// if you wanted you could write this code like this:
-// const mapStateToProps = ({ user }) => ({ user });
-const mapStateToProps = state => ({
-  
-});
+const mapStateToProps = (state) => ({});
 
 export default connect(mapStateToProps)(Nav);

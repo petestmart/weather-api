@@ -10,6 +10,7 @@ import CurrentWeather from './CurrentWeather';
 // ========== MATERIAL UI ========== //
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 
 // ========== STYLES ========== //
 import './WeatherDisplay.css';
@@ -37,14 +38,17 @@ class WeatherDisplay extends Component {
         let todayTemperatureLowF
         let todayCondition;
         let todayWeatherIcon;
+        let todayDate;
         let tomorrowTemperatureMaxF;
         let tomorrowTemperatureLowF;
         let tomorrowCondition;
         let tomorrowWeatherIcon;
+        let tomorrowDate;
         let twoDayTemperatureMaxF;
         let twoDayTemperatureLowF;
         let twoDayCondition;
-        let twoDayWeatherIcon
+        let twoDayWeatherIcon;
+        let twoDayDate;
         let locationCity;
         let locationRegion;
 
@@ -55,6 +59,11 @@ class WeatherDisplay extends Component {
             let todayWeather = weatherDataReducer.forecast.forecastday[0].day;
             let tomorrowWeather = weatherDataReducer.forecast.forecastday[1].day;
             let twoDayWeather = weatherDataReducer.forecast.forecastday[2].day;
+
+            // Date
+            todayDate = weatherDataReducer.forecast.forecastday[0].date;
+            tomorrowDate = weatherDataReducer.forecast.forecastday[1].date;
+            twoDayDate = weatherDataReducer.forecast.forecastday[2].date;
 
             // Location
             locationCity = weatherDataReducer.location.name;
@@ -95,6 +104,7 @@ class WeatherDisplay extends Component {
                     <Grid item xs={12}>
                         {/* Current Weather */}
                         <CurrentWeather
+                            displayDate={todayDate}
                             displayCurrentTemperatureF={currentTemperatureF}
                             displayCurrentCondition={currentCondition}
                             displayCurrentWeatherIcon={currentWeatherIcon}
@@ -107,6 +117,7 @@ class WeatherDisplay extends Component {
                     <Grid item xs={12} sm={4}>
                         {/* Today's Low and High */}
                         <WeatherCards
+                            displayDate={todayDate}
                             displayHighTemperatureF={todayTemperatureMaxF}
                             displayLowTemperatureF={todayTemperatureLowF}
                             displayConditions={todayCondition}
@@ -116,6 +127,7 @@ class WeatherDisplay extends Component {
                     <Grid item xs={12} sm={4}>
                         {/* Tomorrow's Weather */}
                         <WeatherCards
+                            displayDate={tomorrowDate}
                             displayHighTemperatureF={tomorrowTemperatureMaxF}
                             displayLowTemperatureF={tomorrowTemperatureLowF}
                             displayConditions={tomorrowCondition}
@@ -125,6 +137,7 @@ class WeatherDisplay extends Component {
                     <Grid item xs={12} sm={4}>
                         {/* Two Day Weather */}
                         <WeatherCards
+                            displayDate={twoDayDate}
                             displayHighTemperatureF={twoDayTemperatureMaxF}
                             displayLowTemperatureF={twoDayTemperatureLowF}
                             displayConditions={twoDayCondition}
