@@ -6,12 +6,11 @@ import { connect } from 'react-redux';
 // ========== COMPONENTS ========== //
 import WeatherCards from './WeatherCards';
 import CurrentWeather from './CurrentWeather';
-// import DateGenerator from './DateGenerator';
+
 
 // ========== MATERIAL UI ========== //
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 
 // ========== STYLES ========== //
 import './WeatherDisplay.css';
@@ -74,21 +73,28 @@ class WeatherDisplay extends Component {
 
         // Declarations //
         let currentTemperatureF;
+        let currentTemperatureC;
         let currentCondition;
         let currentWeatherIcon;
         let lastUpdated;
         let todayTemperatureMaxF;
-        let todayTemperatureLowF
+        let todayTemperatureMaxC;
+        let todayTemperatureLowF;
+        let todayTemperatureLowC
         let todayCondition;
         let todayWeatherIcon;
         let todayDate;
         let tomorrowTemperatureMaxF;
+        let tomorrowTemperatureMaxC
         let tomorrowTemperatureLowF;
+        let tomorrowTemperatureLowC;
         let tomorrowCondition;
         let tomorrowWeatherIcon;
         let tomorrowDate;
         let twoDayTemperatureMaxF;
+        let twoDayTemperatureMaxC;
         let twoDayTemperatureLowF;
+        let twoDayTemperatureLowC;
         let twoDayCondition;
         let twoDayWeatherIcon;
         let twoDayDate;
@@ -105,11 +111,7 @@ class WeatherDisplay extends Component {
             let tomorrowWeather = weatherDataReducer.forecast.forecastday[1].day;
             let twoDayWeather = weatherDataReducer.forecast.forecastday[2].day;
 
-            // Date
-            // todayDateRaw = weatherDataReducer.forecast.forecastday[0].date;
-            // todayDate = todayDateRaw => {
-
-            // };
+            // Dates
             todayDate = this.state.today;
             tomorrowDate = this.state.tomorrow;
             twoDayDate = this.state.twoDay;
@@ -120,22 +122,29 @@ class WeatherDisplay extends Component {
 
             // Current
             currentTemperatureF = currentWeather.temp_f;
+            currentTemperatureC = currentWeather.temp_c;
             currentCondition = currentWeather.condition.text;
             currentWeatherIcon = currentWeather.condition.icon;
             lastUpdated = currentWeather.last_updated;
             // Today
             todayTemperatureMaxF = todayWeather.maxtemp_f;
+            todayTemperatureMaxC = todayWeather.maxtemp_c;
             todayTemperatureLowF = todayWeather.mintemp_f;
+            todayTemperatureLowC = todayWeather.mintemp_c;
             todayCondition = todayWeather.condition.text;
             todayWeatherIcon = todayWeather.condition.icon;
             // Tomorrow
             tomorrowTemperatureMaxF = tomorrowWeather.maxtemp_f;
+            tomorrowTemperatureMaxC = tomorrowWeather.maxtemp_c;
             tomorrowTemperatureLowF = tomorrowWeather.mintemp_f;
+            tomorrowTemperatureLowC = tomorrowWeather.mintemp_c;
             tomorrowCondition = tomorrowWeather.condition.text;
             tomorrowWeatherIcon = tomorrowWeather.condition.icon;
             // Two Day
             twoDayTemperatureMaxF = twoDayWeather.maxtemp_f;
+            twoDayTemperatureMaxC = twoDayWeather.maxtemp_c;
             twoDayTemperatureLowF = twoDayWeather.mintemp_f;
+            twoDayTemperatureLowC = twoDayWeather.mintemp_c;
             twoDayCondition = twoDayWeather.condition.text;
             twoDayWeatherIcon = tomorrowWeather.condition.icon;
 
@@ -155,6 +164,7 @@ class WeatherDisplay extends Component {
                         <CurrentWeather
                             displayDate={todayDate}
                             displayCurrentTemperatureF={currentTemperatureF}
+                            displayCurrentTemperatureC={currentTemperatureC}
                             displayCurrentCondition={currentCondition}
                             displayCurrentWeatherIcon={currentWeatherIcon}
                             displayLastUpdated={lastUpdated}
@@ -168,7 +178,9 @@ class WeatherDisplay extends Component {
                         <WeatherCards
                             displayDate={todayDate}
                             displayHighTemperatureF={todayTemperatureMaxF}
+                            displayHighTemperatureC={todayTemperatureMaxC}
                             displayLowTemperatureF={todayTemperatureLowF}
+                            displayLowTemperatureC={todayTemperatureLowC}
                             displayConditions={todayCondition}
                             displayWeatherIcon={todayWeatherIcon}
                         />
@@ -178,7 +190,9 @@ class WeatherDisplay extends Component {
                         <WeatherCards
                             displayDate={tomorrowDate}
                             displayHighTemperatureF={tomorrowTemperatureMaxF}
+                            displayHighTemperatureC={tomorrowTemperatureMaxC}
                             displayLowTemperatureF={tomorrowTemperatureLowF}
+                            displayLowTemperatureC={tomorrowTemperatureLowC}
                             displayConditions={tomorrowCondition}
                             displayWeatherIcon={tomorrowWeatherIcon}
                         />
@@ -188,7 +202,9 @@ class WeatherDisplay extends Component {
                         <WeatherCards
                             displayDate={twoDayDate}
                             displayHighTemperatureF={twoDayTemperatureMaxF}
+                            displayHighTemperatureC={twoDayTemperatureMaxC}
                             displayLowTemperatureF={twoDayTemperatureLowF}
+                            displayLowTemperatureC={twoDayTemperatureLowC}
                             displayConditions={twoDayCondition}
                             displayWeatherIcon={twoDayWeatherIcon}
                         />

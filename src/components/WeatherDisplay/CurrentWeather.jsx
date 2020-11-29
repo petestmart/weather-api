@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 // ========== MATERIAL UI ========== //
 import Box from '@material-ui/core/Box';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';

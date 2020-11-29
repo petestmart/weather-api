@@ -4,14 +4,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 // ========== COMPONENTS ========== //
-import CurrentWeather from "../WeatherDisplay/CurrentWeather"
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
-import UserInput from "../UserInput/UserInput";
 import WeatherDisplay from "../WeatherDisplay/WeatherDisplay";
 
 // ========== MATERIAL UI ========== //
-import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 
 // ========== STYLES ========== //
@@ -32,7 +29,6 @@ class App extends Component {
   }
 
   render() {
-    const { classes } = this.props;
 
     return (
       <div>

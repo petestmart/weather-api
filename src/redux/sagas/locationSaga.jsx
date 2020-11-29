@@ -10,19 +10,13 @@ function* getLocation(action) {
     } catch (error) {
         console.log('error in getLocation Saga', error);
     }
-} // end getKeyword Sag
+} // end getLocation Saga
 
 // Watcher Saga
-function* newNamesSaga() {
-    yield takeLatest('SEARCH_LOCATION', getLocation)
-    // yield takeLatest('SEARCH_FUNCTION', getFunction)
-    // yield takeLatest('SAVE_NAME', postName)
-    // yield takeLatest('FETCH_PROJECT', fetchProjectsFetchNames)
-    // yield takeLatest('REMOVE_PROJECT', removeProject)
-    // yield takeLatest('FETCH_NAMES', getSavedNames)
-    // yield takeLatest('REMOVE_SAVED_NAME', removeSavedName)
+function* locationSaga() {
+    yield takeLatest('SEARCH_LOCATION', getLocation)   
 } // end Watcher Saga newNamesSaga
 
 
 
-export default newNamesSaga
+export default locationSaga;

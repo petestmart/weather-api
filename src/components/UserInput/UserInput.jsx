@@ -8,19 +8,8 @@ import swal from 'sweetalert';
 
 // ========== PAGE ELEMENTS ========== //
 import Button from "@material-ui/core/Button";
-import CardContent from '@material-ui/core/CardContent';
-import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
-import { withStyles } from '@material-ui/core/styles';
 
-const styles = theme => ({
-    root: {
-        flexGrow: 0,
-    },
-    control: {
-        padding: theme.spacing(2),
-    }
-});
 
 class UserInput extends Component {
 
@@ -56,33 +45,28 @@ class UserInput extends Component {
     render() {
         return (
             <div>
-                {/* <Paper className="location-input"> */}
-                    {/* <CardContent> */}
-                        {/* <h2>Enter Location</h2> */}
-                        <span >
-                            <form>
-                                <TextField
-                                    onChange={this.handleChange}
-                                    id="filled-basic"
-                                    label="Search City or Zip"
-                                    variant="outlined"
-                                    className="input"
-                                    size="small"
-                                />
-                                <Button
-                                    onClick={this.handleClick}
-                                    size="small"
-                                    className="submitButton"
-                                    variant="contained"
-                                    color="primary"
-                                    type="submit"
-                                >
-                                    Submit
+                <span >
+                    <form>
+                        <TextField
+                            onChange={this.handleChange}
+                            id="filled-basic"
+                            label="Search City or Zip"
+                            variant="outlined"
+                            className="input"
+                            size="small"
+                        />
+                        <Button
+                            onClick={this.handleClick}
+                            size="small"
+                            className="submitButton"
+                            variant="contained"
+                            color="primary"
+                            type="submit"
+                        >
+                            Submit
                                 </Button>
-                            </form>
-                        </span>
-                    {/* </CardContent> */}
-                {/* </Paper> */}
+                    </form>
+                </span>
             </div>
         ) // end return
     } // end render
