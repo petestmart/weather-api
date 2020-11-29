@@ -50,15 +50,15 @@ class WeatherCards extends Component {
                                 <Typography>
                                     {this.props.displayDate}
                                 </Typography>
-                                <Typography>
-                                    High Temp {this.props.displayHighTemperatureF}
-                                </Typography>
-                                {icon}
+                                    {icon}
                                 <Typography>
                                     {this.props.displayConditions}
                                 </Typography>
                                 <Typography>
-                                    Low Temp {this.props.displayLowTemperatureF}
+                                    High {this.props.displayHighTemperatureF}ºF
+                                </Typography>
+                                <Typography>
+                                    Low {this.props.displayLowTemperatureF}ºF
                                 </Typography>
                             </CardContent>
                         </Card>

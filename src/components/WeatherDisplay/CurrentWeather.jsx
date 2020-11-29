@@ -42,7 +42,7 @@ class CurrentWeather extends Component {
                         >
                             <CardContent>
                                 <Typography>
-                                    Current Temp {this.props.displayCurrentTemperatureF}
+                                    Current Temp {this.props.displayCurrentTemperatureF}º F
                                 </Typography>
                                 <img src={this.props.displayCurrentWeatherIcon} alt={this.props.displayCurrentCondition} />
                                 <Typography>
