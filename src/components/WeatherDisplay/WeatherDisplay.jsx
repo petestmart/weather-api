@@ -38,21 +38,30 @@ class WeatherDisplay extends Component {
     }
 
     getDate = () => {
-        let today = new Date()
-        let dd = today.getDate()
-        let mm = today.getMonth() + 1 //January=0
-        let yyyy = today.getFullYear()
-        if (dd < 10) {
-            dd = '0' + dd
-        }
+        let today = new Date();
+        let tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        let twoDay = new Date(tomorrow);
+        twoDay.setDate(twoDay.getDate() + 1);
+        let dd = today.getDate();
+        let ee = tomorrow.getDate();
+        let ff = twoDay.getDate();
+        let monthName = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        let mm = monthName[today.getMonth()];  //January=0
+        let nn = monthName[tomorrow.getMonth()];
+        let oo = monthName[twoDay.getMonth()];
+        let yyyy = today.getFullYear();
+        let zzzz = tomorrow.getFullYear();
+        let aaaa = twoDay.getFullYear(); 
+        let dayName = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        let dayOfWeek = dayName[today.getDay()];
+        let tomorrowDayOfWeek = dayName[tomorrow.getDay()];
+        let twoDayDayOfWeek = dayName[twoDay.getDay()];
 
-        if (mm < 10) {
-            mm = '0' + mm
-        }
 
-        today = `${mm}-${dd}-${yyyy}`;
-        let tomorrow = `${mm}-${dd+1}-${yyyy}`;
-        let twoDay = `${mm}-${dd+2}-${yyyy}`;
+        today = `Today: ${dayOfWeek} ${mm} ${dd}, ${yyyy}`;
+        tomorrow = `Tomorrow: ${tomorrowDayOfWeek} ${nn} ${ee}, ${zzzz}`;
+        twoDay = `${twoDayDayOfWeek} ${oo} ${ff}, ${aaaa}`;
         this.setState({
             today: today,
             tomorrow: tomorrow,
@@ -97,9 +106,11 @@ class WeatherDisplay extends Component {
             let twoDayWeather = weatherDataReducer.forecast.forecastday[2].day;
 
             // Date
-            // todayDate = weatherDataReducer.forecast.forecastday[0].date;
+            // todayDateRaw = weatherDataReducer.forecast.forecastday[0].date;
+            // todayDate = todayDateRaw => {
+
+            // };
             todayDate = this.state.today;
-            
             tomorrowDate = this.state.tomorrow;
             twoDayDate = this.state.twoDay;
 
