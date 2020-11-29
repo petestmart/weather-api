@@ -16,12 +16,12 @@ const Nav = (props) => (
   <div className="nav">
     <Grid container spacing={1}>
       <Grid item sm={6} xs={12}>
-        <h1 >
-          <Typography className="nav-title">
+        {/* <h1> */}
+          <Typography variant="h4" className="nav-title">
             <img src={dayIcon} alt="spinning sun icon" />
             SunSpotter
           </Typography>
-        </h1>
+        {/* </h1> */}
       </Grid>
       <Grid item sm={6} xs={12}>
         <div className="location-input-form">

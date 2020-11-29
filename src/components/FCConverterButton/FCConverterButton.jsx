@@ -2,10 +2,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// ========== COMPONENTS ========== //
-import CurrentWeather from '../WeatherDisplay/CurrentWeather';
-import WeatherCards from '../WeatherDisplay/WeatherCards';
-
 
 // ========== MATERIAL UI ========== //
 import Button from '@material-ui/core/Button';
@@ -69,7 +65,6 @@ class FCConverterButton extends Component {
                         Convert To Celcius
                 </Button>
                 </div>
-                
             )
         }
     }

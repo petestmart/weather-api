@@ -32,6 +32,33 @@ class CurrentWeather extends Component {
         if (this.props.reduxState.weatherDataReducer.length === 0) {
             return null;
         }
+        else if (this.props.reduxState.FCReducer === false) {
+            return (
+                <div>
+                    <Box className="current-weather-display">
+                        <Card
+                            className={classes.card}
+                        >
+                            <CardContent>
+                                <Typography>
+                                    Current Temp {this.props.displayCurrentTemperatureC}ºC
+                                </Typography>
+                                <img src={this.props.displayCurrentWeatherIcon} alt={this.props.displayCurrentCondition} />
+                                <Typography>
+                                    {this.props.displayCurrentCondition}
+                                </Typography>
+                                <Typography>
+                                    {this.props.displayLocationCity} - {this.props.displayLocationRegion}
+                                </Typography>
+                                <Typography>
+                                    Updated {this.props.displayLastUpdated}
+                                </Typography>
+                            </CardContent>
+                        </Card>
+                    </Box>
+                </div>
+            )
+        }
         else {
             return (
                 <div>
@@ -41,7 +68,7 @@ class CurrentWeather extends Component {
                         >
                             <CardContent>
                                 <Typography>
-                                    Current Temp {this.props.displayCurrentTemperatureF}º F
+                                    Current Temp {this.props.displayCurrentTemperatureF}ºF
                                 </Typography>
                                 <img src={this.props.displayCurrentWeatherIcon} alt={this.props.displayCurrentCondition} />
                                 <Typography>
