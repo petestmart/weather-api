@@ -15,6 +15,7 @@ router.get('/', (req, res) => {
         res.send(response.data);
       })
       .catch((err) => {
+        console.log(`Error making API query ${req.query.tag}: `, err)
         res.sendStatus(500);
       });
 });  // End GET from Weather API

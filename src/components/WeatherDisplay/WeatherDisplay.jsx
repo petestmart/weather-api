@@ -1,7 +1,6 @@
 // ========== REACT ========== //
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { withRouter } from 'react-router-dom'
 
 // ========== COMPONENTS ========== //
 import WeatherCards from './WeatherCards';
@@ -14,6 +13,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 // ========== STYLES ========== //
 import './WeatherDisplay.css';
+import swal from 'sweetalert';
 
 const styles = theme => ({
     root: {
@@ -101,8 +101,21 @@ class WeatherDisplay extends Component {
         let locationCity;
         let locationRegion;
 
+        if (this.props.reduxState.errorReducer === 500){
+            console.log('weatherDataReducer length', this.props.reduxState.weatherDataReducer.length)
+            console.log('this.props.reduxState.errorReducer', this.props.reduxState.errorReducer)
+            swal("Location Error", "There were no results from the entered location. Please try again.")
+            this.props.dispatch({
+                type: 'SET_WEATHER_DATA',
+                payload: '',
+            })
+            this.props.dispatch({
+                type: 'LOCATION_ERROR',
+                action: 'reset'
+            })
+        }
 
-        if (this.props.reduxState.weatherDataReducer.length !== 0) {
+        else if (this.props.reduxState.weatherDataReducer.length !== 0 ) {
             
 
             let weatherDataReducer = this.props.reduxState.weatherDataReducer;

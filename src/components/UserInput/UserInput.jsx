@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-// ========== STYLE ========== //
+// ========== STYLES ========== //
 import "./UserInput.css";
 import swal from 'sweetalert';
 
@@ -64,7 +64,7 @@ class UserInput extends Component {
                             type="submit"
                         >
                             Submit
-                                </Button>
+                        </Button>
                     </form>
                 </span>
             </div>
