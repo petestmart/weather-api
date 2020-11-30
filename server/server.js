@@ -1,0 +1,33 @@
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
+
+
+/** ---------- MIDDLEWARE ---------- **/
+app.use(bodyParser.json()); // needed for axios requests
+
+// Route includes
+const locationRouter = require('./routes/location.router');
+
+// Body parser middleware
+app.use(bodyParser.json());
+app.use("/static", express.static(path.join(__dirname, "client/build")));
+
+// // start up passport sessions
+// app.use(passport.initialize());
+// app.use(passport.session());
+
+/* Routes */
+app.use('/api/location', locationRouter)
+
+
+// Serve static files
+app.use("/static", express.static(path.join(__dirname, "client/build")));
+
+// App Set //
+const PORT = process.env.PORT || 5000;
+
+/** Listen * */
+app.listen(PORT, () => {
+  console.log(`Listening on port: ${PORT}`);
+});
