@@ -26,14 +26,6 @@ Sign up for an API Key at: [weatherapi.com](https://www.weatherapi.com/)
 See "Installation Instructions" below for information on setting your API Key.
 
 
-### Create database and table
-
-Create a new database called `namefunk` and create tables using the SQL commands located in the database.sql file
-
-
-If you would like to name your database something else, you will need to change `namefunk` to the name of your new database name in `server/modules/pool.js`
-
-
 ### Installation Instructions
 
 * Run `npm install`
