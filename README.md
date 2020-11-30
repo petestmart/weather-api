@@ -50,7 +50,7 @@ If you would like to name your database something else, you will need to change 
 
 ### Screen Shot
 
-![screenshot](documentation/images/NameFunkScreenShot.png)
+![screenshot](documentation/images/sunspotterscreenshot.png)
 
 ## Production Build
 
