@@ -3,7 +3,7 @@
 SunSpotter is a weather app to find current weather conditions as well as a three-day forecast (today, tomorrow, and two days away). Simply enter a city or zip code from anywhere in the world and SunSpotter will display your data.  SunSpotter is mobile responsive and will look great on your desktop or mobile device.
 
 ## Update 12/1/2020 - Testing
-Started to add testing on branch unit-testing.  Install additional dependencies with `npm install`, and run tests with `npm test` in the terminal.
+Started to add testing on branch `unit-testing`.  Install additional dependencies with `npm install`, and run tests with `npm test` in the terminal.
 Testing Technologies: React Testing Library, Enzyme, and Jest.  A full list of dependencies can be found in `package.json`
 
 ## Built With
