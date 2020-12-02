@@ -1,6 +1,5 @@
 {
-  
-  "name": "prime-solo-project",
+  "name": "sunspotter",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:5000",
@@ -31,10 +30,18 @@
     "client": "react-scripts start",
     "server": "nodemon --watch server server/server.js",
     "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test": "react-scripts test"
   },
   "devDependencies": {
-    "nodemon": "^1.18.10"
+    "@testing-library/react": "^11.2.2",
+    "babel-preset-react-app": "^10.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "jest": "^24.9.0",
+    "jest-enzyme": "^7.1.2",
+    "nodemon": "^1.18.10",
+    "react-test-renderer": "^17.0.1"
   },
   "browserslist": [
     ">0.2%",
