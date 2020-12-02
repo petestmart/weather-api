@@ -13,6 +13,6 @@ function* saveFahrenheitState(action) {
 // Watcher Saga
 function* FCSaga() {
     yield takeLatest('SET_FAHRENHEIT_STATE', saveFahrenheitState)
-} // end Watcher Saga newNamesSaga
+} // end Watcher Saga FCSaga
 
 export default FCSaga;

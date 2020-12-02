@@ -18,7 +18,7 @@ function* getLocation(action) {
 // Watcher Saga
 function* locationSaga() {
     yield takeLatest('SEARCH_LOCATION', getLocation)   
-} // end Watcher Saga newNamesSaga
+} // end Watcher Saga locationSaga
 
 
 
