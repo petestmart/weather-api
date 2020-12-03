@@ -1,4 +1,4 @@
-import errorReducer from "./errorReducer";
+import errorReducer from "../errorReducer";
 
 test("errorReducer should initially be an empty array", () => {
   const action = {};

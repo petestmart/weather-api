@@ -1,4 +1,4 @@
-import weatherDataReducer from "./errorReducer";
+import weatherDataReducer from "../errorReducer";
 
 test("weatherDataReducer should initially be an empty array", () => {
   const action = {};
@@ -14,3 +14,4 @@ test("weatherDataReducer should ignore irrelevant actions", () => {
   const returnedState = weatherDataReducer(undefined, action);
   expect(returnedState.length).toBe(0);
 });
+

@@ -1,4 +1,4 @@
-import FCReducer from "./FCReducer";
+import FCReducer from "../FCReducer";
 
 test("FCReducer should initially be an empty array", () => {
   const action = {};
